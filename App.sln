@@ -13,9 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.DB", "App.DB", "{646A0D
 		App.DB\WebStore_log.ldf = App.DB\WebStore_log.ldf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.WEB", "App.WEB\App.WEB.csproj", "{27683034-50D6-4AD1-9EEC-D3E3487A9E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.WEB", "App.WEB\App.WEB.csproj", "{27683034-50D6-4AD1-9EEC-D3E3487A9E92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.DAL.Tests", "App.DAL.Tests\App.DAL.Tests.csproj", "{E9ECEE32-ACFA-4DF8-BBF5-6ED667B04A74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.DAL.Tests", "App.DAL.Tests\App.DAL.Tests.csproj", "{E9ECEE32-ACFA-4DF8-BBF5-6ED667B04A74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.WEB.Integration.Tests", "App.WEB.Integration.Tests\App.WEB.Integration.Tests.csproj", "{35D844D4-26A7-4CED-90A0-6D3B1ED64BD7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2194A75B-9C3D-4DB6-BB52-700ECC430322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{E9ECEE32-ACFA-4DF8-BBF5-6ED667B04A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9ECEE32-ACFA-4DF8-BBF5-6ED667B04A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9ECEE32-ACFA-4DF8-BBF5-6ED667B04A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35D844D4-26A7-4CED-90A0-6D3B1ED64BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D844D4-26A7-4CED-90A0-6D3B1ED64BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D844D4-26A7-4CED-90A0-6D3B1ED64BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D844D4-26A7-4CED-90A0-6D3B1ED64BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2194A75B-9C3D-4DB6-BB52-700ECC430322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2194A75B-9C3D-4DB6-BB52-700ECC430322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2194A75B-9C3D-4DB6-BB52-700ECC430322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2194A75B-9C3D-4DB6-BB52-700ECC430322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

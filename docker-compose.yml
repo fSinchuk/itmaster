@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  app.web:
+    image: ${DOCKER_REGISTRY-}appweb
+    container_name: appweb
+    build:
+      context: .
+      dockerfile: App.WEB\Dockerfile
+    depends_on:
+      - app.db
+    networks:
+      mynet:
+        ipv4_address: 162.0.0.5
+  
+  app.db:
+    image: microsoft/mssql-server-windows-express
+    container_name: databaseapp
+    environment:
+       ACCEPT_EULA: Y
+       SA_PASSWORD: pwd2019!
+       ATTACH_DBS: '[{"dbName":"WebStore","dbFiles":["c:\\sql\\WebStore.mdf","c:\\sql\\WebStore_log.ldf"]}]'
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./App.DB\:c:\sql\
+    networks:
+      mynet:
+        ipv4_address: 162.0.0.6
+
+networks:
+  mynet:
+    ipam:
+      config:
+        - subnet: 162.0.0.0/24

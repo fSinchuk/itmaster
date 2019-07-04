@@ -1,5 +1,6 @@
 ﻿using App.DAL.Repository;
 using App.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -47,14 +48,13 @@ namespace App.DAL.Tests
         {
             var repo = new ProductsRepository(db);
 
-            var item = await repo.GetByIDAsync(1);
+            Products item = await repo.GetByIDAsync(1);
             item.Name = "test";
             item.Price = 125;
             item.IsActive = false;
 
-            await repo.UpdateAsync(item);
-
-
+            db.SaveChanges();
+            
             var savedItem = await repo.GetByIDAsync(1);
 
             Assert.AreEqual("test", savedItem.Name);
