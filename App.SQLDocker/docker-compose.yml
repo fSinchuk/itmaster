@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  db:
+    build: .
+    image: microsoft/mssql-server-windows-express
+    environment:
+       ACCEPT_EULA: Y
+       SA_PASSWORD: pwd2019!
+       ATTACH_DBS: '[{"dbName":"WebStore","dbFiles":["c:\\sql\\WebStore.mdf","c:\\sql\\WebStore_log.ldf"]}]'
+    ports:
+      - "1433:1433"
+    container_name: mysqldev                                           
+    volumes:
+      - ./../App.DB\:c:\sql\           
+    networks:
+      testnet:
+        ipv4_address: 182.0.0.6
+
+networks:
+  testnet:
+    ipam:
+      config:
+        - subnet: 182.0.0.0/24  

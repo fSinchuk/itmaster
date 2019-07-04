@@ -1,0 +1,50 @@
+﻿@using App.Models
+@model IEnumerable<Products>
+@{
+    ViewData["Title"] = "Products list";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row col-12">
+
+    <table class="table">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>
+                Category
+            </td>
+            <td>
+                Active
+            </td>
+            <td>
+                Price
+            </td>
+            <td>
+
+            </td>
+        </tr>
+
+
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id </td>
+                <td>@product.Name </td>
+                <td>@product.ProductCateogry.Name </td>
+                <td>
+                    @product.IsActive
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    <a href="/Product/EditAsync/@product.Id">Edit</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
